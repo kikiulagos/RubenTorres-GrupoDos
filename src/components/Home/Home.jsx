@@ -1,17 +1,14 @@
 import { Carousel } from 'react-bootstrap';
 import Title from '../Title/Title';
 import ItemList from "../ItemList/ItemList";
-<<<<<<< HEAD
-=======
 import { useCartStore } from '../../Stores/CartStores';
->>>>>>> 90f51ba (19-11)
 import './HomePage.css';
 
 export default function HomePage() {
     const slides = [
-        { id: 1, image: 'https://cdn.pixabay.com/photo/2019/10/23/08/16/clothes-4570801_1280.jpg', title: '', description: '' },
-        { id: 2, image: './slider2.jpg', title: '', description: '' },
-        { id: 3, image: './slider3.jpg', title: '', description: '' },
+        { id: 1, image: 'https://cdn.pixabay.com/photo/2019/10/23/08/16/clothes-4570801_1280.jpg' },
+        { id: 2, image: './slider2.jpg' },
+        { id: 3, image: './slider3.jpg' },
     ];
 
     const products = [
@@ -27,14 +24,12 @@ export default function HomePage() {
         { id: 7, name: 'Xiaomi', price: 500, discountPrice: 450, img: 'https://www.abcdin.cl/dw/image/v2/BCPP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwe3a68f83/images/large/27975178.jpg?sw=1200&sh=1200&sm=fit', category: 'Calzado' },
         { id: 9, name: 'MacBook Pro', price: 4085, discountPrice: 3999, img: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-silver-select-202410?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1728916305269', category: 'Electrónica' }
     ];
-<<<<<<< HEAD
-=======
+
     const { addToCart } = useCartStore();
     const handleAddToCart = (product) => {
         addToCart(product);
         alert(`Producto "${product.name}" añadido al carrito.`);
     };
->>>>>>> 90f51ba (19-11)
 
     return (    
         <div>
@@ -44,48 +39,33 @@ export default function HomePage() {
                         <img
                             className="d-block w-100"
                             src={slide.image}
-                            alt={slide.title}
+                            alt="Slide"
                         />
-                        <Carousel.Caption>
-                            <h3>{slide.title}</h3>
-                            <p>{slide.description}</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                 ))}
             </Carousel>
-<<<<<<< HEAD
 
-=======
->>>>>>> 90f51ba (19-11)
             <Title
                 text="En Oferta"
                 level={1}
                 className="text-5xl font-semibold mb-8 mt-12 text-black tracking-tight ml-6"
                 style={{ letterSpacing: '0.05em' }}
             />
-<<<<<<< HEAD
-            <ItemList products={products} /> 
-
-=======
             <ItemList 
                 products={products} 
                 onAddToCart={handleAddToCart} 
             /> 
->>>>>>> 90f51ba (19-11)
+
             <Title
                 text="Productos Más Populares"
                 level={2}
                 className="text-4xl font-medium mb-6 mt-8 text-black tracking-tight ml-6"
                 style={{ letterSpacing: '0.05em' }}
             />
-<<<<<<< HEAD
-            <ItemList products={popularProducts} /> 
-=======
             <ItemList 
                 products={popularProducts} 
                 onAddToCart={handleAddToCart} 
             /> 
->>>>>>> 90f51ba (19-11)
         </div>
     );
 }

@@ -2,15 +2,9 @@ import PropTypes from 'prop-types';
 import Item from "../Item/Item"; 
 import { getProducts } from "../../data/asyncMock"; 
 import { useEffect, useState } from "react"; 
-<<<<<<< HEAD
 import Loading from "../Loading/Loading"; 
 
-export default function ItemList({ products, selectedCategory }) {
-=======
-import Loading from "../Loading/Loading";
-
 export default function ItemList({ products, selectedCategory, onAddToCart }) {
->>>>>>> 90f51ba (19-11)
     const [fetchedProducts, setFetchedProducts] = useState([]); 
     const [loading, setLoading] = useState(!products); 
     const [error, setError] = useState(null);
@@ -61,10 +55,7 @@ export default function ItemList({ products, selectedCategory, onAddToCart }) {
                             price={prod.price} 
                             discountPrice={prod.discountPrice} 
                             img={prod.img} 
-<<<<<<< HEAD
-=======
                             onAddToCart={() => onAddToCart(prod)} 
->>>>>>> 90f51ba (19-11)
                         />
                     ))}
                 </div>
@@ -75,20 +66,12 @@ export default function ItemList({ products, selectedCategory, onAddToCart }) {
 
 ItemList.propTypes = {
     products: PropTypes.array,
-<<<<<<< HEAD
-    selectedCategory: PropTypes.string
-=======
     selectedCategory: PropTypes.string,
     onAddToCart: PropTypes.func 
->>>>>>> 90f51ba (19-11)
 };
 
 ItemList.defaultProps = {
     products: null,
-<<<<<<< HEAD
-    selectedCategory: 'Todos'
-=======
     selectedCategory: 'Todos',
     onAddToCart: () => {} 
->>>>>>> 90f51ba (19-11)
 };
